@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01D7D148-4D95-4893-A4E2-6EB9E2274654}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WCFvsWebAPI.Infra.CrossCutting.IoC</RootNamespace>
+    <AssemblyName>WCFvsWebAPI.Infra.CrossCutting.IoC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SimpleInjector, Version=4.4.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SimpleInjector.4.4.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WCFvsWebAPI.Domain\WCFvsWebAPI.Domain.csproj">
+      <Project>{BC6ECA95-9EAB-48F4-B15F-5E7ED69E1EA9}</Project>
+      <Name>WCFvsWebAPI.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WCFvsWebAPI.Infra.Data.ADO\WCFvsWebAPI.Infra.Data.ADO.csproj">
+      <Project>{A84F14CB-A326-4F71-A741-4A5C96207471}</Project>
+      <Name>WCFvsWebAPI.Infra.Data.ADO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WCFvsWebAPI.Infra.Data.Common\WCFvsWebAPI.Infra.Data.Common.csproj">
+      <Project>{274A693B-C2C9-44E9-B863-B00344029E9D}</Project>
+      <Name>WCFvsWebAPI.Infra.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WCFvsWebAPI.Infra.Data.Dapper\WCFvsWebAPI.Infra.Data.Dapper.csproj">
+      <Project>{F3D6FCE9-A946-4769-855B-EEB00F24371C}</Project>
+      <Name>WCFvsWebAPI.Infra.Data.Dapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

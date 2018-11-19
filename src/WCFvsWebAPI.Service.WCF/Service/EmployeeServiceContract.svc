@@ -1,0 +1,8 @@
+﻿<%@ 
+    ServiceHost 
+    Language="C#" 
+    Debug="true" 
+    Service="WCFvsWebAPI.Service.WCF.Service.EmployeeServiceContract" 
+    CodeBehind="EmployeeServiceContract.svc.cs"
+    Factory="SimpleInjector.Integration.Wcf.SimpleInjectorServiceHostFactory, SimpleInjector.Integration.Wcf" 
+%>

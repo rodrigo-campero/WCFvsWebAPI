@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
+using System.ServiceModel.Web;
 
 namespace WCFvsWebAPI.Service.WCF.Service
 {
@@ -16,7 +14,7 @@ namespace WCFvsWebAPI.Service.WCF.Service
         [OperationContract]
         EmployeeDataContract Update(EmployeeDataContract employeeDataContract);
         [OperationContract]
-        EmployeeDataContract GetById(int id);
+        EmployeeDataContract GetById(string id);
         [OperationContract]
         IEnumerable<EmployeeDataContract> GetAll();
     }
